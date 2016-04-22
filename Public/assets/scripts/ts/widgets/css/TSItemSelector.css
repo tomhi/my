@@ -1,0 +1,131 @@
+/* *, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+} */
+
+
+.itemSelector ul, .itemSelector li {
+	list-style: none;
+}
+.itemSelector .s-container {
+	background: #fff;
+	border: 1px solid #d3d3d3;
+	border-radius: 0;
+	box-sizing: border-box;
+}
+.itemSelector .s-header {
+	background: #e8e8e8;
+	border-bottom: 1px solid #d3d3d3;
+	height: 36px;
+	padding: 0 10px;
+}
+.itemSelector .s-header > h4 {
+	font: 300 15px/34px "微软雅黑";
+	margin: 0;
+}
+.itemSelector .s-body {
+	padding: 15px;
+}
+.itemSelector .s-body:before, .itemSelector .s-body:after {
+	display: table;
+	content: "";
+}
+.itemSelector .form-control {
+	padding: 5px 8px;
+	font-size: 13px;
+	line-height: 1.4;
+	background-color: #fff;
+	border: 1px solid #d9d9d9;
+	border-top-color: #c0c0c0;
+	border-radius: 1px;
+	display: block;
+	width: 100%;
+}
+.itemSelector .s-container {
+	background: #fff;
+	border: 1px solid #d3d3d3;
+	border-radius: 0;
+	box-sizing: border-box;
+	text-align: center;
+	position: relative;
+	
+	padding: 10px;
+	height: 200px
+}
+.itemSelector .ms-selectable {
+	//margin-right: 10%;
+	width: 45%;
+	display: inline-block;
+	position: absolute;
+}
+.itemSelector .form_sep:before, .itemSelector .form_sep:after {
+	content: "";
+	display: table;
+}
+.itemSelector .form_sep:after {
+	clear: both;
+}
+.itemSelector .bottom {
+	margin: 10px 15px;
+	padding-top: 10px;
+	border-top: 1px dashed #e3e3e3;
+}
+.itemSelector .btn {
+	padding: 5px 12px;
+	font-size: 13px;
+	line-height: 18px;
+	cursor: default;
+	border-radius: 2px;
+}
+.itemSelector .btn-default {
+	color: #333;
+	/* text-shadow: 0 1px 0 #fff; */
+	background-color: #f3f3f3;
+	background-image: linear-gradient(to bottom, #f5f5f5 0, #f1f1f1 100%);
+	background-repeat: repeat-x;
+	border: 1px solid #dcdcdc;
+}
+
+
+
+.itemSelector select option:hover {
+	background: #5e85c9;
+	cursor: pointer;
+	color: white;
+}
+
+.itemSelector select {
+	width: 100%;
+	border: 1px #ccc solid;
+	height: 150px;
+	overflow: auto;
+}
+
+.itemSelector select option {
+	height: 26px;
+	line-height: 26px;
+	padding: 2px 10px;
+	border-bottom: 1px #eee solid;
+	padding-top: 5px;
+}
+
+
+.itemSelector table tr td {
+	width: 33%;
+}
+
+.itemSelector div ul li {
+	padding: 3px;
+}
+
+.itemSelector div ul  {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	text-align: center
+}
+ 
+.itemSelector input {
+	width: 100%;
+	padding: 5px;
+} 

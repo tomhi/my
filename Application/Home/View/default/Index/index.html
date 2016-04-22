@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <include file="Public/head"/>
+    <link href="__CSS__/home.css" type="text/css" rel="stylesheet">
+    <php> D('Member')->need_login();</php>
+</head>
+<body>
+<include file="Public/header"/>
+<div class="main-wrapper">
+    <!-- 头部 -->
+    <style>
+        .container{
+           /*  width:1140px;max-width: 1140px */
+        }
+    </style>
+    <include file="Index/_nav"/>
+
+    <div id="main-container" class="top-bar ">
+        <volist name="showBlocks" id="v">
+            <php>if($v=='slider'){</php>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8 col-lg-8">
+                        {:W('Common/Adv/render',array(array('name'=>'slider','type'=>2,'width'=>'1120px','height'=>'300px','margin'=>'0 0 15px 0','title'=>'首页轮播图','data'=>array('style'=>1))))}
+                    </div>
+                    <div class="col-md-4 col-lg-4 visible-lg visible-md">
+                    
+			            	<div class="common-block" style="height: 200px">
+			                    <h2 style="padding: 10px"> 最新通告                    </h2>
+			                    <div>
+			                        <div class="text-center">
+			                              www.YoYcn.com已通过备案<br>备案号： 京ICP备16014557号
+			                        </div>
+			                    </div>
+			                </div>
+			                
+			                <div class="common-block" style="height: 90px; margin-top: 10px">
+			                    <h2 style="padding: 10px"> 最新状态                   </h2>
+			                    <div>
+			                        <div id="weather" class="text-center">
+			                        	<script>
+											(function(){
+											    var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+											    $.getScript(cityUrl, function(script, textStatus, jqXHR) {
+											        var citytq = remote_ip_info.city ;// 获取城市
+											        var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+											        $.ajax({
+											            url : url,
+											            dataType : "script",
+											            scriptCharset : "gbk",
+											            success : function(data) {
+											                var _w = window.SWther.w[citytq][0];
+											                var _f= _w.f1+"_0.png";
+											                if(new Date().getHours() > 17){
+											                     _f= _w.f2+"_1.png";                
+											                }
+											                var img = "<img width='16px' height='16px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" +_f
+											                + "' />";
+											                var tq = citytq + " " + img + " " + _w.s1 + " " + _w.t1 + "℃～" + _w.t2 + "℃  " + _w.d1 + _w.p1 + "级";
+											                $('#weather').html(tq);
+											            }
+											        });
+											    });
+											})();
+										</script>
+			                        </div>
+			                    </div>
+			                </div>
+		                
+		               <!--  <div class="row" style="margin-top: 10px">
+			                <div class="common-block" style="height: 90px">
+			                    <h2 style="padding: 10px"> 说点什么                    </h2>
+			                    <div>
+			                        <div class="text-center">
+			                              <form class="form-horizontal" role="form">
+									        <div class="form-group">
+									            <label ></label>
+									            <div class="col-xs-10">
+									                <input ctype="email" class="form-control" placeholder="email">
+									            </div>
+									            <button class="col-xs-2">发表</button>
+									        </div>
+									       </form>
+			                        </div>
+			                    </div>
+			                </div>
+		                </div> -->
+		                
+		            </div>
+                </div>
+            </div>
+           
+            <php>}else{</php>
+            {:W($v.'/HomeBlock/render')}
+            <php>}</php>
+        </volist>
+    </div>
+</div>
+
+
+<!-- /头部 -->
+
+<!-- 主体 -->
+
+<!-- /主体 -->
+
+<!-- 底部 -->
+<include file="Public/footer"/>
+<!-- /底部 -->
+</body>
+</html>
