@@ -160,7 +160,8 @@
                 }
             });
             function uploadPicturecover(file, data){
-                var data = $.parseJSON(data);
+                //var data = $.parseJSON(data);
+                var data = eval('(' + data + ')');
                 var src = '';
                 if(data.status){
                     $("#cover_id_cover").val(data.id);
